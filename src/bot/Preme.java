@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 public class Preme{
 
 	public static void main(String[] args) throws InterruptedException {
@@ -18,7 +20,7 @@ public class Preme{
 		WebDriverWait wait = new WebDriverWait(bot, 60);
 		WebDriverWait drop = new WebDriverWait(bot, 1000000000);
 		//COPY AND PASTE THE PREME LINK
-		bot.get("PUT THE LINK FOR THE ITEM YOU WANT HERE");
+		bot.get("http://google.com");
 		//COPS THE PREME
 		drop.until(ExpectedConditions.elementToBeClickable(By.id("size")));
 		//MAKES SURE TO COP THE PREME IN YOUR SIZE
