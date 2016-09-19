@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 
-public class Preme{
+public class FootLocker{
 
 	public static void main(String[] args) throws InterruptedException {
 		for(int x = 0; x <= 10; x++){
@@ -28,12 +28,12 @@ public class Preme{
 		Thread.sleep(2000);
 		bot.findElement(By.name("commit")).click();
 		Thread.sleep(500);
-		
-		
+
+
 		//THE PART OF THE CODE IM UNSURE ABOUT SUPREME IS WEIRD
 		new Select(bot.findElement(By.id("cart"))).selectByVisibleText("checkout now");
 		//THE PART OF THE CODE IM UNSURE ABOUT SUPREME IS WEIRD
-		
+
 		//needs to be tested but pretty sure it should all work
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("order_billing_name")));
 		bot.findElement(By.id("order_billing_name")).sendKeys("Juan Jimenez");
