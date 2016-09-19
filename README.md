@@ -1,2 +1,2 @@
-# Yeeyz Yeeyz just jumped over jumpman
-Everyone is getting yeeyzs tonight
+# Yeezy Yeezy just jumped over jumpman
+Everyone is getting yeezys tonight
