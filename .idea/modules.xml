@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/super-trapper.iml" filepath="$PROJECT_DIR$/.idea/super-trapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BasicActions.iml" filepath="$PROJECT_DIR$/.idea/BasicActions.iml" />
     </modules>
   </component>
 </project>
