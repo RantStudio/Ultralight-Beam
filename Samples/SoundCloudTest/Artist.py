@@ -1,9 +1,9 @@
 
-class Artists:
+class Artist:
 
-    def __init__(self, name, numberOfSongs, followers):
+    def __init__(self, name, tracks, followers):
         self.name = name
-        self.numberOfSogs = numberOfSongs
+        self.tracks = tracks
         self.songs = []
         self.followers = followers
 
