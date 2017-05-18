@@ -3,10 +3,9 @@ from selenium import webdriver
 from Samples.SoundCloudTest.Artist import Artist
 from Samples.SoundCloudTest.Songs import Song
 
-
 def main():
 
-    ##Intializes the web driver
+    #ntializes the web driver
     driver = webdriver.PhantomJS()
 
     ##Navigates to artist's page
@@ -60,7 +59,7 @@ def main():
     for i in range(len(songNames)):
         carti.songs.append(Song(songNames[i].text,plays[i].text,comments[i].text))
 
-    ##Print!
+    ##Print!f
     for i in range(len(carti.songs)):
         print(carti.songs[i].name)
 main()
