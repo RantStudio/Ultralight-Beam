@@ -1,5 +1,7 @@
 init:
 	pip install -r requirements.txt
-test:
+	export PYTHONPATH="$PYTHONPATH:$HOME/.python"
+
+test:	
 	nosetests tests
 
