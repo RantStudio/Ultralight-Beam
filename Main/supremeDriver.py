@@ -6,7 +6,7 @@ from Main.items import category
 
 
 
-def supremeDriver():
+def supremeDriver(categoryName, itemName, itemColor, fullName, email, telephone, addressLineOne, addressLineTwo, city, zip, creditCardCompany,creditCardNumber, expirationMonth, expirationYear, securitycode ):
 
     # Intializes the web driver
     driver = webdriver.Firefox()
@@ -15,7 +15,7 @@ def supremeDriver():
     driver.get("http://www.supremenewyork.com/shop/all")
 
     #putting in a test category name for now
-    catName = ("pants")
+    catName = (categoryName)
 
     #using the getCategory function that is defined bewlo
     cat = getCategory(catName, driver)
@@ -26,9 +26,9 @@ def supremeDriver():
     #get an array ot items on the page so we can do some lin alg memes to get the item + color
 
     #test name of the item
-    itemName = ("Cargo Pant")
+    itemName = (itemName)
 
-    colorDesired = ("Blue Plaid")
+    colorDesired = (itemColor)
 
 
     items = driver.find_elements_by_css_selector("a.name-link")
@@ -41,7 +41,7 @@ def supremeDriver():
 
     #will find the for loop for where the item first shows up
     for i in range(len(items)):
-        if((items[i].text == itemName) and (items[i+1].text == colorDesired)):
+        if((itemName in items[i].text) and (items[i+1].text == colorDesired)):
             items[i].click()
             break
 
@@ -72,22 +72,22 @@ def supremeDriver():
     element4 =  WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "order_billing_name")))
 
-    driver.find_element_by_id("order_billing_name").send_keys("Fake Name")
-    driver.find_element_by_id("order_email").send_keys("Fake email")
-    driver.find_element_by_id("order_tel").send_keys("9999999999")
-    driver.find_element_by_id("bo").send_keys("address one")
-    driver.find_element_by_id("oba3").send_keys("address two")
-    driver.find_element_by_id("order_billing_zip").send_keys("zip")
-    driver.find_element_by_id("order_billing_city").send_keys("City")
+    driver.find_element_by_id("order_billing_name").send_keys(fullName)
+    driver.find_element_by_id("order_email").send_keys(email)
+    driver.find_element_by_id("order_tel").send_keys(telephone)
+    driver.find_element_by_id("bo").send_keys(addressLineOne)
+    driver.find_element_by_id("oba3").send_keys(addressLineTwo)
+    driver.find_element_by_id("order_billing_zip").send_keys(zip)
+    driver.find_element_by_id("order_billing_city").send_keys(city)
     driver.find_element_by_xpath("//select[@name='order[billing_state]']/option[text()='NY']").click()
     #the following line is for credit card type select add later.
-    #driver.find_element_by_xpath("//select[@name='credit_card[type]']/option[text()='CREDIT CARD COMPANY GOES HERE']").click()
-    driver.find_element_by_id("cnb").send_keys("9999999999999999")
+    driver.find_element_by_xpath("//select[@name='credit_card[type]']/option[text()='" + creditCardCompany + "']").click()
+    driver.find_element_by_id("cnb").send_keys(creditCardNumber)
     #for the following the user will input the month the user's credit card expires
-    driver.find_element_by_xpath("//select[@name='credit_card[month]']/option[text()='04']").click()
+    driver.find_element_by_xpath("//select[@name='credit_card[month]']/option[text()='"+expirationMonth+"']").click()
     #for the following the user will input the year the user's credit card expires
-    driver.find_element_by_xpath("//select[@name='credit_card[year]']/option[text()='2019']").click()
-    driver.find_element_by_id("vval").send_keys("123")
+    driver.find_element_by_xpath("//select[@name='credit_card[year]']/option[text()='"+expirationYear+"']").click()
+    driver.find_element_by_id("vval").send_keys(securitycode)
     driver.find_element_by_id("order_terms").click()
     driver.find_element_by_name("commit").click()
 
@@ -97,3 +97,5 @@ def getCategory(name, driver):
     items = driver.find_elements_by_class_name("name-link")
     group = category(name, len(items))
     return group
+
+#supremeDriver()
