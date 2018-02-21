@@ -10,9 +10,10 @@ will add more documentation later.
 
 Note: This will run off terminal after you add the two lines
 
+```
 export PYTHONPATH="$PYTHONPATH:$HOME/.python"
-
 ln -s /home/user/work/project/foo ~/.python/
+```
 
 This will make it so python is recognized as a module
 
